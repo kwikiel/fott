@@ -1,0 +1,2 @@
+# fott
+Fott Django learning
