@@ -1,7 +1,15 @@
 {% load staticfiles %}
-<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+
+<link rel="stylesheet" type="text/css" href="http://bootswatch.com/paper/bootstrap.min.css" />
 {% if latest_question_list %}
-    <ul>
+
+<div class="navbar navbar-default">
+	<div class="nabbar-header">
+		Polls App
+	</div>
+</div>
+<div class="jumbotron">
+<ul>
 	    {% for question in latest_question_list %}
 	    <li><a href="{% url 'polls:detail'  question.id %}"> {{question.question_text }}</a></li>
 	    {% endfor %}
@@ -9,4 +17,4 @@
     {% else %}
         <p>No polls are available. </p>
     {% endif %}
-
+</div>
